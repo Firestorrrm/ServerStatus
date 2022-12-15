@@ -1,14 +1,12 @@
-# ServerStatus中文版：   
+# ServerStatus (en)：   
 
-* ServerStatus中文版是一个酷炫高逼格的云探针、云监控、服务器云监控、多服务器探针~。
-* 在线演示：https://tz.cloudcpp.com    
+* ServerStatus (en)
 
 [![Python Support](https://img.shields.io/badge/python-3.6%2B%20-blue.svg)](https://github.com/cppla/ServerStatus)
 [![C++ Compiler](http://img.shields.io/badge/C++-GNU-blue.svg?style=flat&logo=cplusplus)](https://github.com/cppla/ServerStatus)
 [![License](https://img.shields.io/badge/license-MIT-4EB1BA.svg?style=flat-square)](https://github.com/cppla/ServerStatus)
 [![Version](https://img.shields.io/badge/Version-Build%201.0.9-red)](https://github.com/cppla/ServerStatus)
 
-![Latest Version](http://dl.cpp.la/Archive/serverstatus_1.0.9.png)
 
 `Watchdog🐶已经加入，触发式告警。 interval只是为了防止频繁收到报警信息造成骚扰，并不是探测间隔。`    
 
