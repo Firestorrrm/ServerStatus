@@ -2,10 +2,10 @@
 
 * ServerStatus (en)
 
-[![Python Support](https://img.shields.io/badge/python-3.6%2B%20-blue.svg)](https://github.com/cppla/ServerStatus)
-[![C++ Compiler](http://img.shields.io/badge/C++-GNU-blue.svg?style=flat&logo=cplusplus)](https://github.com/cppla/ServerStatus)
-[![License](https://img.shields.io/badge/license-MIT-4EB1BA.svg?style=flat-square)](https://github.com/cppla/ServerStatus)
-[![Version](https://img.shields.io/badge/Version-Build%201.0.9-red)](https://github.com/cppla/ServerStatus)
+[![Python Support](https://img.shields.io/badge/python-3.6%2B%20-blue.svg)](https://github.com/firestorrrm/ServerStatus)
+[![C++ Compiler](http://img.shields.io/badge/C++-GNU-blue.svg?style=flat&logo=cplusplus)](https://github.com/firestorrrm/ServerStatus)
+[![License](https://img.shields.io/badge/license-MIT-4EB1BA.svg?style=flat-square)](https://github.com/firestorrrm/ServerStatus)
+[![Version](https://img.shields.io/badge/Version-Build%201.0.9-red)](https://github.com/firestorrrm/ServerStatus)
 
 
 `Watchdog 🐶` - Trigger alerts based on system information    
@@ -52,18 +52,19 @@ wget --no-check-certificate -qO client-linux.py 'https://raw.githubusercontent.c
 cd ServerStatus/server && make
 ./sergate
 ```
-If there's no error press, Ok or ctrl+c to exit.
-If there's an error, check if port 35601 is in use.
+If there's no error, `Ok` or `CTRL+C` to exit.
+
+If there's an error, check if port `35601` is in use.
 
 #### 2. Modify the config file  
 ```diff
-! watchdog rule 可以为任何已知字段的表达式。         
-! watchdog interval 最小通知间隔。
-! watchdog callback 可自定义为Post方法的URL，告警内容将拼接其后并发起回调。   
+! watchdog rule **NAME**         
+! watchdog interval **MINIMUM NOTIFICATION INTERVAL**
+! watchdog callback **POST URL**   
 
-! watchdog callback Telegram：https://api.telegram.org/bot你自己的密钥/sendMessage?parse_mode=HTML&disable_web_page_preview=true&chat_id=你自己的标识&text=
-! watchdog callback Server酱: https://sctapi.ftqq.com/你自己的密钥.send?title=ServerStatus&desp=
-! watchdog callback PushDeer: https://api2.pushdeer.com/message/push?pushkey=你自己的密钥&text=  
+! watchdog callback Telegram：https://api.telegram.org/bot**YOUR KEY**/sendMessage?parse_mode=HTML&disable_web_page_preview=true&chat_id=**YOUR ID**&text=
+! watchdog callback Server: https://sctapi.ftqq.com/**YOUR KEY**.send?title=ServerStatus&desp=
+! watchdog callback PushDeer: https://api2.pushdeer.com/message/push?pushkey=**YOUR KEY**&text=  
 ```
 
 ```
