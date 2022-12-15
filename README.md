@@ -8,20 +8,20 @@
 [![Version](https://img.shields.io/badge/Version-Build%201.0.9-red)](https://github.com/cppla/ServerStatus)
 
 
-`Watchdog🐶已经加入，触发式告警。 interval只是为了防止频繁收到报警信息造成骚扰，并不是探测间隔。`    
+`Watchdog 🐶` - Trigger alerts based on system information    
 
-# 目录介绍：
+# Overview：
 
-* clients       	客户端文件
-* server       	 	服务端文件  
-* web           	网站文件
+* Clients       	Client File
+* Server       	 	Server File  
+* Web           	Web Files
 
-* server/config.json	探针配置文件                                
-* web/json      	探针月流量        
+* server/config.json	Server Config File                                
+* web/json      	Monthly Traffic Files        
 
-# 自动部署：
+# Automatic Deployment：
 
-【服务端】：
+【Server】：
 ```bash
 
 `Docker`:     
@@ -29,10 +29,10 @@
 wget --no-check-certificate -qO ~/serverstatus-config.json https://raw.githubusercontent.com/cppla/ServerStatus/master/server/config.json && mkdir ~/serverstatus-monthtraffic    
 docker run -d --restart=always --name=serverstatus -v ~/serverstatus-config.json:/ServerStatus/server/config.json -v ~/serverstatus-monthtraffic:/usr/share/nginx/html/json -p 80:80 -p 35601:35601 cppla/serverstatus:latest     
 
-`Docker-compose(推荐)`: docker-compose up -d
+`Docker-compose (Recommended)`: docker-compose up -d
 ```
 
-【客户端】：
+【Client】：
 ```bash
 wget --no-check-certificate -qO client-linux.py 'https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py' && nohup python3 client-linux.py SERVER={$SERVER} USER={$USER} PASSWORD={$PASSWORD} >/dev/null 2>&1 &
 
@@ -40,11 +40,11 @@ eg:
 wget --no-check-certificate -qO client-linux.py 'https://raw.githubusercontent.com/cppla/ServerStatus/master/clients/client-linux.py' && nohup python3 client-linux.py SERVER=45.79.67.132 USER=s04  >/dev/null 2>&1 &
 ```
 
-# 手动安装教程：     
+# Manual Deployment：     
    
-**【服务端配置】**           
+**【Server】**           
           
-#### 一、生成服务端程序              
+#### 1. Compile server files              
 ```
 `Debian/Ubuntu`: apt-get -y install gcc g++ make libcurl4-openssl-dev
 `Centos/Redhat`: yum -y install gcc gcc-c++ make libcurl-devel
@@ -52,9 +52,10 @@ wget --no-check-certificate -qO client-linux.py 'https://raw.githubusercontent.c
 cd ServerStatus/server && make
 ./sergate
 ```
-如果没错误提示，OK，ctrl+c关闭；如果有错误提示，检查35601端口是否被占用    
+If there's no error press, Ok or ctrl+c to exit.
+If there's an error, check if port 35601 is in use.
 
-#### 二、修改配置文件         
+#### 2. Modify the config file  
 ```diff
 ! watchdog rule 可以为任何已知字段的表达式。         
 ! watchdog interval 最小通知间隔。
